@@ -1,0 +1,220 @@
+/* =========================
+   THEME VARIABLES
+========================= */
+:root {
+    --primary: #4a90e2;
+    --primary-dark: #357abd;
+    --bg: #ffffff;
+    --text: #333;
+    --muted: #777;
+    --border: #e6e6e6;
+    --hover: #f5f9ff;
+    --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    --radius: 12px;
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+    font-family: Arial, sans-serif;
+    background: #f6f8fb;
+    margin: 0;
+    color: var(--text);
+}
+
+/* =========================
+   TOOLBAR
+========================= */
+.toolbar {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 16px 20px;
+    background: var(--bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.toolbar .form-group {
+    flex: 1;
+    min-width: 0;
+}
+
+.toolbar label {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--muted);
+}
+
+.toolbar select {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: #fff;
+    transition: 0.2s;
+    outline: none;
+}
+
+.toolbar select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15);
+}
+
+/* Button */
+.map-btn {
+    height: 42px;
+    padding: 0 18px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: 0.2s ease;
+}
+
+.map-btn:hover {
+    background: var(--primary-dark);
+}
+
+.map-btn:active {
+    transform: scale(0.97);
+}
+
+.map-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* =========================
+   TABLE CONTAINER
+========================= */
+.table-container {
+    max-width: 800px;
+    margin: 30px auto;
+    background: var(--bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+/* Table */
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    table-layout: fixed; /* ✅ FIX ALIGNMENT */
+}
+
+/* Header */
+.table-container thead {
+    background: var(--primary);
+    color: #fff;
+}
+
+.table-container th {
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* Rows */
+.table-container td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    word-wrap: break-word; /* ✅ FIX TEXT OVERFLOW */
+    vertical-align: top;
+}
+
+/* Column widths (IMPORTANT) */
+.table-container th:nth-child(1),
+.table-container td:nth-child(1) {
+    width: 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table-container th:nth-child(2),
+.table-container td:nth-child(2) {
+    width: 180px;
+}
+
+.table-container th:nth-child(3),
+.table-container td:nth-child(3) {
+    width: 140px;
+}
+
+.table-container th:nth-child(4),
+.table-container td:nth-child(4) {
+    width: auto;
+}
+
+/* Zebra + hover */
+.table-container tbody tr:nth-child(even) {
+    background: #fafafa;
+}
+
+.table-container tbody tr:hover {
+    background: var(--hover);
+}
+
+/* Radio alignment */
+.table-container input[type="radio"] {
+    transform: scale(1.1);
+    cursor: pointer;
+    accent-color: var(--primary);
+}
+
+/* =========================
+   SUCCESS BANNER
+========================= */
+.success-banner {
+    max-width: 800px;
+    margin: 15px auto;
+    padding: 12px;
+    background: #e6f4ea;
+    color: #2e7d32;
+    border: 1px solid #b7dfc2;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .map-btn {
+        width: 100%;
+    }
+
+    /* Stack table for small screens */
+    .table-container table,
+    .table-container thead,
+    .table-container tbody,
+    .table-container th,
+    .table-container td,
+    .table-container tr {
+        display: block;
+    }
+
+    .table-container th {
+        display: none;
+    }
+
+    .table-container td {
+        padding: 10px;
+        border-bottom: 1px solid var(--border);
+    }
+}

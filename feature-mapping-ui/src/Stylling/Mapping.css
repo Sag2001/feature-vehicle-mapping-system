@@ -1,0 +1,253 @@
+/* ===== PAGE WRAPPER ===== */
+.mapping-container {
+    max-width: 520px;
+    margin: 50px auto;
+    padding: 28px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    transition: 0.3s ease;
+}
+
+/* ===== TITLE ===== */
+.mapping-container h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* ===== FORM GROUP ===== */
+.form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #555;
+    font-size: 13px;
+}
+
+/* SELECT INPUT */
+.form-group select {
+    padding: 11px;
+    border-radius: 10px;
+    border: 1px solid #dcdcdc;
+    outline: none;
+    transition: all 0.25s ease;
+    background: #fafafa;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-group select:focus {
+    border-color: #4a90e2;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15);
+}
+
+.form-group select option {
+    background: #fff;
+    color: #333;
+}
+
+/* ===== BUTTON GROUP ===== */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* PRIMARY BUTTON */
+.submit-btn {
+    flex: 1;
+    padding: 12px;
+    background: linear-gradient(135deg, #4a90e2, #357abd);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-weight: 500;
+}
+
+.submit-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(74, 144, 226, 0.25);
+}
+
+.submit-btn:active {
+    transform: scale(0.97);
+}
+
+.submit-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* SECONDARY BUTTON */
+.secondary-btn {
+    flex: 1;
+    padding: 12px;
+    background: #f1f1f1;
+    color: #444;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.secondary-btn:hover {
+    background: #e0e0e0;
+}
+
+/* ===== MESSAGE ===== */
+.error-text {
+    margin-bottom: 12px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #fdecea;
+    color: #d32f2f;
+    font-size: 13px;
+    border: 1px solid #f5c6cb;
+}
+
+.success-text {
+    margin-bottom: 12px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #e6f4ea;
+    color: #2e7d32;
+    font-size: 13px;
+    border: 1px solid #b7dfc2;
+}
+
+/* ===== TABLE ===== */
+.table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    word-break: break-word;
+}
+
+/* HEADER */
+th {
+    background: #4a90e2;
+    color: white;
+    font-weight: 600;
+}
+
+/* COLUMN WIDTHS */
+th:nth-child(1), td:nth-child(1) { width: 60px; }   /* ID */
+th:nth-child(2), td:nth-child(2) { width: 180px; }  /* Feature */
+th:nth-child(3), td:nth-child(3) { width: 200px; }  /* Vehicle */
+th:nth-child(4), td:nth-child(4) ,
+th:nth-child(5), td:nth-child(5) { 
+    white-space: nowrap;
+ /* Status */
+}
+th:nth-child(6), td:nth-child(6) { 
+    width: 120px; 
+    text-align: center;    /* Action */
+}
+
+/* TEXT HANDLING */
+td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* DELETE BUTTON */
+.btn-delete {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-delete:hover {
+    background: #c0392b;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+    .mapping-container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+}
+
+/* ===== BODY ===== */
+body {
+    margin: 0;
+    padding: 0;
+    background: #f4f6f9;
+    color: #333;
+}
+
+/*Pagination Logic*/
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+/* ALL buttons look same base style */
+.pagination button {
+    padding: 6px 10px;
+    border: 1px solid #4a90e2;
+    background: #fff;
+    color: #4a90e2;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 13px;
+}
+
+/* hover effect */
+.pagination button:hover {
+    background: #4a90e2;
+    color: #fff;
+}
+
+/* ACTIVE page */
+.pagination button.active {
+    background: #4a90e2;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* disabled buttons */
+.pagination button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
